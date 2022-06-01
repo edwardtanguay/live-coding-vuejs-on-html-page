@@ -9,15 +9,25 @@
 		  content="width=device-width, initial-scale=1.0">
 	<script src="https://unpkg.com/vue@next"></script>
 	<title>German Article Practice</title>
+	<style>
+		.nouns {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeate(5, 1fr);
+			grid-column-gap: 2px;
+			grid-row-gap: 2px;
+		}
+	</style>
 </head>
 
 <body>
 	<h1>German Article Practice</h1>
 	<div id="app">
 		<h2>There are {{nouns.length}} nouns.</h2>
-		<ul>
-			<li v-for="noun in nouns">{{noun.singular}}</li>
-		</ul>
+		<div class="nouns">
+			<div class="noun"
+				 v-for="noun in nouns">{{noun.singular}}</div>
+		</div>
 	</div>
 
 	<script>
