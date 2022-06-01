@@ -16,21 +16,31 @@
 	<div id="app">
 		<div>{{message}}</div>
 		<button @click="changeMessage()">Change message</button>
+		<h2>There are {{nouns.length}} nouns.</h2>
+		<ul>
+			<li v-for="noun in nouns">{{noun}}</li>
+		</ul>
 	</div>
 
 	<script>
 		const app = Vue.createApp({
 			data() {
 				return {
-					message: 'this is a test'
+					message: 'this is a test',
+					nouns: []
 				}
 			},
 			methods: {
 				changeMessage() {
-					this.message = 'changed'
+					this.message = 'changed';
+					this.nouns.push('nnn');
 				},
 				initialize() {
-					console.log('page loaded');
+					this.nouns = ['111','222','333', '444'];
+					// (async () => {
+					// 	// const response = await fetch('https://edwardtanguay.netlify.app/share/germanNouns.json');
+
+					// })();
 				}
 			}
 		});
