@@ -28,10 +28,14 @@
 			methods: {
 				changeMessage() {
 					this.message = 'changed'
+				},
+				initialize() {
+					console.log('page loaded');
 				}
 			}
 		});
-		app.mount('#app');
+		const vm = app.mount('#app');
+		vm.initialize();
 	</script>
 </body>
 
