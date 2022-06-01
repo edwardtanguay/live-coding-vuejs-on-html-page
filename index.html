@@ -7,12 +7,26 @@
 		  content="IE=edge">
 	<meta name="viewport"
 		  content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@next"></script>
 	<title>German Article Practice</title>
 </head>
 
 <body>
 	<h1>German Article Practice</h1>
-	<div>nnn</div>
+	<div id="app">
+		<div>{{message}}</div>
+	</div>
+
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					message: 'this is a test'
+				}
+			}
+		});
+		app.mount('#app');
+	</script>
 </body>
 
 </html>
