@@ -42,10 +42,10 @@
 	<h1>German Article Practice</h1>
 	<div id="app">
 		<div class="buttons">
-			<button>der</button>
-			<button>die</button>
-			<button>das</button>
-			<button>hide</button>
+			<button @click="changeChoice('der')">der</button>
+			<button @click="changeChoice('die')">die</button>
+			<button @click="changeChoice('das')">das</button>
+			<button @click="changeChoice('hide')">hide</button>
 		</div>
 		<div class="nouns">
 			<div class="noun"
@@ -57,7 +57,8 @@
 		const app = Vue.createApp({
 			data() {
 				return {
-					nouns: []
+					nouns: [],
+					choice: 'hide'
 				}
 			},
 			methods: {
@@ -79,6 +80,9 @@
 						];
 					}
 					return array;
+				},
+				changeChoice(choice) {
+					this.choice = choice;
 				}
 			}
 		});
