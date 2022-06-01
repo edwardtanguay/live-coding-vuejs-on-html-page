@@ -28,6 +28,10 @@
 			padding: 5px;
 		}
 
+		.noun.selected {
+			background-color: green;
+		}
+
 		.buttons {
 			margin: 0 0 20px 0;
 		}
@@ -51,7 +55,7 @@
 			<button :class="{selected: choice === 'hide'}" @click="changeChoice('hide')">hide</button>
 		</div>
 		<div class="nouns">
-			<div class="noun"
+			<div class="noun" :class="{selected: choice === noun.article}"
 				 v-for="noun in nouns">
 				 <span v-if="choice === noun.article">{{noun.article}}</span> {{noun.singular}}
 				</div>
