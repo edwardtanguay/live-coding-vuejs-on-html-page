@@ -14,8 +14,6 @@
 <body>
 	<h1>German Article Practice</h1>
 	<div id="app">
-		<div>{{message}}</div>
-		<button @click="changeMessage()">Change message</button>
 		<h2>There are {{nouns.length}} nouns.</h2>
 		<ul>
 			<li v-for="noun in nouns">{{noun.singular}}</li>
@@ -26,14 +24,10 @@
 		const app = Vue.createApp({
 			data() {
 				return {
-					message: 'this is a test',
 					nouns: []
 				}
 			},
 			methods: {
-				changeMessage() {
-					this.message = 'changed';
-				},
 				initialize() {
 					(async () => {
 						const response = await fetch('https://edwardtanguay.netlify.app/share/germanNouns.json');
