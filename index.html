@@ -27,13 +27,26 @@
 			text-align: center;
 			padding: 5px;
 		}
+
+		.buttons {
+			margin: 0 0 20px 0;
+		}
+		button {
+			margin-right: 5px;
+			font-size: 1.5rem;
+		}
 	</style>
 </head>
 
 <body>
 	<h1>German Article Practice</h1>
 	<div id="app">
-		<h2>There are {{nouns.length}} nouns.</h2>
+		<div class="buttons">
+			<button>der</button>
+			<button>die</button>
+			<button>das</button>
+			<button>hide</button>
+		</div>
 		<div class="nouns">
 			<div class="noun"
 				 v-for="noun in nouns">{{noun.singular}}</div>
