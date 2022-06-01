@@ -52,7 +52,9 @@
 		</div>
 		<div class="nouns">
 			<div class="noun"
-				 v-for="noun in nouns">{{noun.singular}}</div>
+				 v-for="noun in nouns">
+				 <span v-if="choice === noun.article">{{noun.article}}</span> {{noun.singular}}
+				</div>
 		</div>
 	</div>
 
