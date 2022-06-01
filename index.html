@@ -35,6 +35,9 @@
 			margin-right: 5px;
 			font-size: 1.5rem;
 		}
+		button.selected {
+			background-color: green;
+		}
 	</style>
 </head>
 
@@ -42,10 +45,10 @@
 	<h1>German Article Practice</h1>
 	<div id="app">
 		<div class="buttons">
-			<button @click="changeChoice('der')">der</button>
-			<button @click="changeChoice('die')">die</button>
-			<button @click="changeChoice('das')">das</button>
-			<button @click="changeChoice('hide')">hide</button>
+			<button :class="{selected: choice === 'der'}" @click="changeChoice('der')">der</button>
+			<button :class="{selected: choice === 'die'}" @click="changeChoice('die')">die</button>
+			<button :class="{selected: choice === 'das'}" @click="changeChoice('das')">das</button>
+			<button :class="{selected: choice === 'hide'}" @click="changeChoice('hide')">hide</button>
 		</div>
 		<div class="nouns">
 			<div class="noun"
