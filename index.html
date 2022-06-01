@@ -15,6 +15,7 @@
 	<h1>German Article Practice</h1>
 	<div id="app">
 		<div>{{message}}</div>
+		<button @click="changeMessage()">Change message</button>
 	</div>
 
 	<script>
@@ -22,6 +23,11 @@
 			data() {
 				return {
 					message: 'this is a test'
+				}
+			},
+			methods: {
+				changeMessage() {
+					this.message = 'changed'
 				}
 			}
 		});
